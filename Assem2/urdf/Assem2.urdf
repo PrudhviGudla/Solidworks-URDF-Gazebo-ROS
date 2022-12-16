@@ -1,0 +1,1889 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.5.1-0-g916b5db  Build Version: 1.5.7152.31018
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="Assem2">
+  <link
+    name="Chassis">
+    <inertial>
+      <origin
+        xyz="-2.8776E-16 0.4538 0.39752"
+        rpy="0 0 0" />
+      <mass
+        value="22.232" />
+      <inertia
+        ixx="0.0001"
+        ixy="0.0001"
+        ixz="0.0001"
+        iyy="0.0001"
+        iyz="0.0001"
+        izz="0.0001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assem2/meshes/Chassis.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.89804 0.91765 0.92941 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assem2/meshes/Chassis.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="left_tyre_mount">
+    <inertial>
+      <origin
+        xyz="-1.3878E-17 0.035211 -5.5511E-17"
+        rpy="0 0 0" />
+      <mass
+        value="14.29" />
+      <inertia
+        ixx="0.0001"
+        ixy="0.0001"
+        ixz="0.0001"
+        iyy="0.0001"
+        iyz="0.0001"
+        izz="0.0001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assem2/meshes/left_tyre_mount.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.52941 0.54902 0.54902 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assem2/meshes/left_tyre_mount.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_tyre_mount_j"
+    type="fixed">
+    <origin
+      xyz="0.34367 -0.09653 0.32653"
+      rpy="3.1416 0 1.5708" />
+    <parent
+      link="Chassis" />
+    <child
+      link="left_tyre_mount" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="l_bearing">
+    <inertial>
+      <origin
+        xyz="0.0809 -0.009926 -0.0012141"
+        rpy="0 0 0" />
+      <mass
+        value="1.267" />
+      <inertia
+        ixx="0.0001"
+        ixy="0.0001"
+        ixz="0.0001"
+        iyy="0.0001"
+        iyz="0.0001"
+        izz="0.0001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assem2/meshes/l_bearing.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assem2/meshes/l_bearing.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l_bearing_j"
+    type="fixed">
+    <origin
+      xyz="0.01 0 0"
+      rpy="3.0199 0 1.5708" />
+    <parent
+      link="left_tyre_mount" />
+    <child
+      link="l_bearing" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="l_rim">
+    <inertial>
+      <origin
+        xyz="0.13619 2.8023E-05 -3.4335E-08"
+        rpy="0 0 0" />
+      <mass
+        value="70.756" />
+      <inertia
+        ixx="0.0001"
+        ixy="0.0001"
+        ixz="0.0001"
+        iyy="0.0001"
+        iyz="0.0001"
+        izz="0.0001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assem2/meshes/l_rim.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.52941 0.54902 0.54902 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assem2/meshes/l_rim.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l_rim_j"
+    type="continuous">
+    <origin
+      xyz="0 -0.009926 -0.0012141"
+      rpy="0 0 0" />
+    <parent
+      link="l_bearing" />
+    <child
+      link="l_rim" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      effort="5"
+      velocity="1" />
+  </joint>
+  <link
+    name="l_sprocket">
+    <inertial>
+      <origin
+        xyz="9.3675E-16 -0.029524 0.00039802"
+        rpy="0 0 0" />
+      <mass
+        value="1.5931" />
+      <inertia
+        ixx="0.0001"
+        ixy="0.0001"
+        ixz="0.0001"
+        iyy="0.0001"
+        iyz="0.0001"
+        izz="0.0001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assem2/meshes/l_sprocket.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.52941 0.54902 0.54902 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assem2/meshes/l_sprocket.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l_sprocket_j"
+    type="fixed">
+    <origin
+      xyz="0.1422 0 0"
+      rpy="0 -0.31416 1.5708" />
+    <parent
+      link="l_rim" />
+    <child
+      link="l_sprocket" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="l_tyre">
+    <inertial>
+      <origin
+        xyz="0.1307 -6.9389E-17 0"
+        rpy="0 0 0" />
+      <mass
+        value="7.6828" />
+      <inertia
+        ixx="0.0001"
+        ixy="0.0001"
+        ixz="0.0001"
+        iyy="0.0001"
+        iyz="0.0001"
+        izz="0.0001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assem2/meshes/l_tyre.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.29804 0.29804 0.29804 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assem2/meshes/l_tyre.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l_tyre_j"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="-2.827 0 0" />
+    <parent
+      link="l_rim" />
+    <child
+      link="l_tyre" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="right_tyre_mount">
+    <inertial>
+      <origin
+        xyz="0 0.035211 0"
+        rpy="0 0 0" />
+      <mass
+        value="14.29" />
+      <inertia
+        ixx="0.0001"
+        ixy="0.0001"
+        ixz="0.0001"
+        iyy="0.0001"
+        iyz="0.0001"
+        izz="0.0001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assem2/meshes/right_tyre_mount.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.52941 0.54902 0.54902 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assem2/meshes/right_tyre_mount.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_tyre_mount_j"
+    type="fixed">
+    <origin
+      xyz="-0.34367 -0.09653 0.32653"
+      rpy="1.5708 -1.5708 0" />
+    <parent
+      link="Chassis" />
+    <child
+      link="right_tyre_mount" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="r_bearing">
+    <inertial>
+      <origin
+        xyz="0.0809 -0.0038538 0.0092276"
+        rpy="0 0 0" />
+      <mass
+        value="1.267" />
+      <inertia
+        ixx="0.0001"
+        ixy="0.0001"
+        ixz="0.0001"
+        iyy="0.0001"
+        iyz="0.0001"
+        izz="0.0001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assem2/meshes/r_bearing.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assem2/meshes/r_bearing.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r_bearing_j"
+    type="fixed">
+    <origin
+      xyz="0.01 0 0"
+      rpy="-1.9664 0 1.5708" />
+    <parent
+      link="right_tyre_mount" />
+    <child
+      link="r_bearing" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="r_rim">
+    <inertial>
+      <origin
+        xyz="0.13619 2.8011E-05 -3.9794E-08"
+        rpy="0 0 0" />
+      <mass
+        value="70.756" />
+      <inertia
+        ixx="0.0001"
+        ixy="0.0001"
+        ixz="0.0001"
+        iyy="0.0001"
+        iyz="0.0001"
+        izz="0.0001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assem2/meshes/r_rim.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.52941 0.54902 0.54902 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assem2/meshes/r_rim.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r_rim_j"
+    type="continuous">
+    <origin
+      xyz="0 -0.0038538 0.0092276"
+      rpy="0 0 0" />
+    <parent
+      link="r_bearing" />
+    <child
+      link="r_rim" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      effort="5"
+      velocity="1" />
+  </joint>
+  <link
+    name="r_sprocket">
+    <inertial>
+      <origin
+        xyz="9.4369E-16 -0.029524 0.00039802"
+        rpy="0 0 0" />
+      <mass
+        value="1.5931" />
+      <inertia
+        ixx="0.0001"
+        ixy="0.0001"
+        ixz="0.0001"
+        iyy="0.0001"
+        iyz="0.0001"
+        izz="0.0001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assem2/meshes/r_sprocket.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.52941 0.54902 0.54902 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assem2/meshes/r_sprocket.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r_sprocket_j"
+    type="fixed">
+    <origin
+      xyz="0.1422 0 0"
+      rpy="0 -0.31416 1.5708" />
+    <parent
+      link="r_rim" />
+    <child
+      link="r_sprocket" />
+    <axis
+      xyz="0 1 0" />
+  </joint>
+  <link
+    name="r_tyre">
+    <inertial>
+      <origin
+        xyz="0.1307 1.1102E-16 2.7756E-16"
+        rpy="0 0 0" />
+      <mass
+        value="7.6828" />
+      <inertia
+        ixx="0.0001"
+        ixy="0.0001"
+        ixz="0.0001"
+        iyy="0.0001"
+        iyz="0.0001"
+        izz="0.0001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assem2/meshes/r_tyre.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.29804 0.29804 0.29804 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assem2/meshes/r_tyre.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r_tyre_j"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="-2.827 0 0" />
+    <parent
+      link="r_rim" />
+    <child
+      link="r_tyre" />
+    <axis
+      xyz="1 0 0" />
+  </joint>
+  <link
+    name="fl_upper">
+    <inertial>
+      <origin
+        xyz="-3.4694E-18 0.012951 0.02796"
+        rpy="0 0 0" />
+      <mass
+        value="0.32153" />
+      <inertia
+        ixx="0.0001"
+        ixy="0.0001"
+        ixz="0.0001"
+        iyy="0.0001"
+        iyz="0.0001"
+        izz="0.0001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assem2/meshes/fl_upper.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.52941 0.54902 0.54902 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assem2/meshes/fl_upper.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fl_upper_j"
+    type="fixed">
+    <origin
+      xyz="0.30673 -0.03047 0.67527"
+      rpy="-1.5708 0 -1.5708" />
+    <parent
+      link="Chassis" />
+    <child
+      link="fl_upper" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="fl_fixed">
+    <inertial>
+      <origin
+        xyz="0.32385 0.194 -0.31372"
+        rpy="0 0 0" />
+      <mass
+        value="1.8214" />
+      <inertia
+        ixx="0.0001"
+        ixy="0.0001"
+        ixz="0.0001"
+        iyy="0.0001"
+        iyz="0.0001"
+        izz="0.0001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assem2/meshes/fl_fixed.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assem2/meshes/fl_fixed.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fl_fixed_j"
+    type="fixed">
+    <origin
+      xyz="0.62076 -0.0035296 -0.0034704"
+      rpy="0.051754 0 3.1416" />
+    <parent
+      link="fl_upper" />
+    <child
+      link="fl_fixed" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="fr_upper">
+    <inertial>
+      <origin
+        xyz="3.4694E-18 -0.012951 -0.02796"
+        rpy="0 0 0" />
+      <mass
+        value="0.32153" />
+      <inertia
+        ixx="0.0001"
+        ixy="0.0001"
+        ixz="0.0001"
+        iyy="0.0001"
+        iyz="0.0001"
+        izz="0.0001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assem2/meshes/fr_upper.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.52941 0.54902 0.54902 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assem2/meshes/fr_upper.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fr_upper_j"
+    type="fixed">
+    <origin
+      xyz="-0.30673 -0.03047 0.67527"
+      rpy="1.5708 0 1.5708" />
+    <parent
+      link="Chassis" />
+    <child
+      link="fr_upper" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="fr_fixed">
+    <inertial>
+      <origin
+        xyz="0.32385 0.194 -0.31372"
+        rpy="0 0 0" />
+      <mass
+        value="1.8214" />
+      <inertia
+        ixx="0.0001"
+        ixy="0.0001"
+        ixz="0.0001"
+        iyy="0.0001"
+        iyz="0.0001"
+        izz="0.0001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assem2/meshes/fr_fixed.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assem2/meshes/fr_fixed.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fr_fixed_j"
+    type="fixed">
+    <origin
+      xyz="-0.62076 0.0035296 0.60999"
+      rpy="0.051754 0 0" />
+    <parent
+      link="fr_upper" />
+    <child
+      link="fr_fixed" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="rl_upper">
+    <inertial>
+      <origin
+        xyz="0 0.012951 0.02796"
+        rpy="0 0 0" />
+      <mass
+        value="0.32153" />
+      <inertia
+        ixx="0.0001"
+        ixy="0.0001"
+        ixz="0.0001"
+        iyy="0.0001"
+        iyz="0.0001"
+        izz="0.0001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assem2/meshes/rl_upper.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.52941 0.54902 0.54902 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assem2/meshes/rl_upper.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rl_upper_j"
+    type="fixed">
+    <origin
+      xyz="0.30673 -0.62429 0.67527"
+      rpy="-1.5708 0 -1.5708" />
+    <parent
+      link="Chassis" />
+    <child
+      link="rl_upper" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="rl_fixed">
+    <inertial>
+      <origin
+        xyz="0.32385 0.194 -0.31372"
+        rpy="0 0 0" />
+      <mass
+        value="1.8214" />
+      <inertia
+        ixx="0.0001"
+        ixy="0.0001"
+        ixz="0.0001"
+        iyy="0.0001"
+        iyz="0.0001"
+        izz="0.0001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assem2/meshes/rl_fixed.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assem2/meshes/rl_fixed.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rl_fixed_j"
+    type="fixed">
+    <origin
+      xyz="0.026941 -0.0035296 -0.0034704"
+      rpy="0.051754 0 3.1416" />
+    <parent
+      link="rl_upper" />
+    <child
+      link="rl_fixed" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="rr_upper">
+    <inertial>
+      <origin
+        xyz="0 -0.012951 -0.02796"
+        rpy="0 0 0" />
+      <mass
+        value="0.32153" />
+      <inertia
+        ixx="0.0001"
+        ixy="0.0001"
+        ixz="0.0001"
+        iyy="0.0001"
+        iyz="0.0001"
+        izz="0.0001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assem2/meshes/rr_upper.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.52941 0.54902 0.54902 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assem2/meshes/rr_upper.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rr_upper_j"
+    type="fixed">
+    <origin
+      xyz="-0.30673 -0.62429 0.67527"
+      rpy="1.5708 0 1.5708" />
+    <parent
+      link="Chassis" />
+    <child
+      link="rr_upper" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="rr_fixed">
+    <inertial>
+      <origin
+        xyz="0.32385 0.194 -0.31372"
+        rpy="0 0 0" />
+      <mass
+        value="1.8214" />
+      <inertia
+        ixx="0.0001"
+        ixy="0.0001"
+        ixz="0.0001"
+        iyy="0.0001"
+        iyz="0.0001"
+        izz="0.0001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assem2/meshes/rr_fixed.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.79216 0.81961 0.93333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assem2/meshes/rr_fixed.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rr_fixed_j"
+    type="fixed">
+    <origin
+      xyz="-0.026941 0.0035296 0.60999"
+      rpy="0.051754 0 0" />
+    <parent
+      link="rr_upper" />
+    <child
+      link="rr_fixed" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="left_p1">
+    <inertial>
+      <origin
+        xyz="5.5511E-17 0.061717 0.014443"
+        rpy="0 0 0" />
+      <mass
+        value="4.5214" />
+      <inertia
+        ixx="0.0001"
+        ixy="0.0001"
+        ixz="0.0001"
+        iyy="0.0001"
+        iyz="0.0001"
+        izz="0.0001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assem2/meshes/left_p1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.52941 0.54902 0.54902 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assem2/meshes/left_p1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_p1_j"
+    type="fixed">
+    <origin
+      xyz="0.20383 -0.90247 0.39587"
+      rpy="1.5708 0 3.1416" />
+    <parent
+      link="Chassis" />
+    <child
+      link="left_p1" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="left_p2">
+    <inertial>
+      <origin
+        xyz="2.7756E-17 0.0019712 -0.046369"
+        rpy="0 0 0" />
+      <mass
+        value="2.9176" />
+      <inertia
+        ixx="0.0001"
+        ixy="0.0001"
+        ixz="0.0001"
+        iyy="0.0001"
+        iyz="0.0001"
+        izz="0.0001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assem2/meshes/left_p2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.52941 0.54902 0.54902 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assem2/meshes/left_p2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_p2_j"
+    type="fixed">
+    <origin
+      xyz="0 0.0108 -0.0127"
+      rpy="0 0 0" />
+    <parent
+      link="left_p1" />
+    <child
+      link="left_p2" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="l_mount">
+    <inertial>
+      <origin
+        xyz="-2.7756E-17 -0.002632 -1.1102E-16"
+        rpy="0 0 0" />
+      <mass
+        value="3.3553" />
+      <inertia
+        ixx="0.0001"
+        ixy="0.0001"
+        ixz="0.0001"
+        iyy="0.0001"
+        iyz="0.0001"
+        izz="0.0001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assem2/meshes/l_mount.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.52941 0.54902 0.54902 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assem2/meshes/l_mount.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l_mount_j"
+    type="fixed">
+    <origin
+      xyz="0 -0.02 -0.07"
+      rpy="3.1416 0 3.1416" />
+    <parent
+      link="left_p2" />
+    <child
+      link="l_mount" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="l_mounting_body">
+    <inertial>
+      <origin
+        xyz="5.4971E-09 -0.051889 0.045522"
+        rpy="0 0 0" />
+      <mass
+        value="3.4201" />
+      <inertia
+        ixx="0.0001"
+        ixy="0.0001"
+        ixz="0.0001"
+        iyy="0.0001"
+        iyz="0.0001"
+        izz="0.0001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assem2/meshes/l_mounting_body.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.52941 0.54902 0.54902 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assem2/meshes/l_mounting_body.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l_mounting_body_j"
+    type="revolute">
+    <origin
+      xyz="0 -0.03 0"
+      rpy="0 0.0024378 0" />
+    <parent
+      link="l_mount" />
+    <child
+      link="l_mounting_body" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="1"
+      velocity="1" />
+  </joint>
+  <link
+    name="l_screw">
+    <inertial>
+      <origin
+        xyz="0 0.038426 -1.7097E-14"
+        rpy="0 0 0" />
+      <mass
+        value="0.27143" />
+      <inertia
+        ixx="0.0001"
+        ixy="0.0001"
+        ixz="0.0001"
+        iyy="0.0001"
+        iyz="0.0001"
+        izz="0.0001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assem2/meshes/l_screw.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.52941 0.54902 0.54902 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assem2/meshes/l_screw.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l_screw_j"
+    type="fixed">
+    <origin
+      xyz="-0.055 -0.17 0.147"
+      rpy="0 0 -1.5708" />
+    <parent
+      link="l_mounting_body" />
+    <child
+      link="l_screw" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="l_wheel">
+    <inertial>
+      <origin
+        xyz="-0.0099772 -0.00080183 0.055043"
+        rpy="0 0 0" />
+      <mass
+        value="24.277" />
+      <inertia
+        ixx="0.0001"
+        ixy="0.0001"
+        ixz="0.0001"
+        iyy="0.0001"
+        iyz="0.0001"
+        izz="0.0001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assem2/meshes/l_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.52941 0.54902 0.54902 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assem2/meshes/l_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l_wheel_j"
+    type="continuous">
+    <origin
+      xyz="0.01 0 0"
+      rpy="-1.5708 -0.067482 0" />
+    <parent
+      link="l_screw" />
+    <child
+      link="l_wheel" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      effort="5"
+      velocity="1" />
+  </joint>
+  <link
+    name="l_upper_bolt">
+    <inertial>
+      <origin
+        xyz="0 -0.005 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.018361" />
+      <inertia
+        ixx="0.0001"
+        ixy="0.0001"
+        ixz="0.0001"
+        iyy="0.0001"
+        iyz="0.0001"
+        izz="0.0001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assem2/meshes/l_upper_bolt.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.52941 0.54902 0.54902 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assem2/meshes/l_upper_bolt.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l_upper_bolt_j"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 -0.32162 0" />
+    <parent
+      link="l_mounting_body" />
+    <child
+      link="l_upper_bolt" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="l_lower_bolt">
+    <inertial>
+      <origin
+        xyz="2.7756E-17 0.005 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.018361" />
+      <inertia
+        ixx="0.0001"
+        ixy="0.0001"
+        ixz="0.0001"
+        iyy="0.0001"
+        iyz="0.0001"
+        izz="0.0001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assem2/meshes/l_lower_bolt.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.52941 0.54902 0.54902 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assem2/meshes/l_lower_bolt.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="l_lower_bolt_j"
+    type="fixed">
+    <origin
+      xyz="0.065 -0.17 0.147"
+      rpy="0 0 1.5708" />
+    <parent
+      link="l_mounting_body" />
+    <child
+      link="l_lower_bolt" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="right_p1">
+    <inertial>
+      <origin
+        xyz="2.7756E-17 0.061717 0.014443"
+        rpy="0 0 0" />
+      <mass
+        value="4.5214" />
+      <inertia
+        ixx="0.0001"
+        ixy="0.0001"
+        ixz="0.0001"
+        iyy="0.0001"
+        iyz="0.0001"
+        izz="0.0001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assem2/meshes/right_p1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.52941 0.54902 0.54902 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assem2/meshes/right_p1.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_p1_j"
+    type="fixed">
+    <origin
+      xyz="-0.20383 -0.90247 0.39587"
+      rpy="1.5708 0 3.1416" />
+    <parent
+      link="Chassis" />
+    <child
+      link="right_p1" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="right_p2">
+    <inertial>
+      <origin
+        xyz="5.5511E-17 0.0019712 -0.046369"
+        rpy="0 0 0" />
+      <mass
+        value="2.9176" />
+      <inertia
+        ixx="0.0001"
+        ixy="0.0001"
+        ixz="0.0001"
+        iyy="0.0001"
+        iyz="0.0001"
+        izz="0.0001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assem2/meshes/right_p2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.52941 0.54902 0.54902 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assem2/meshes/right_p2.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_p2_j"
+    type="fixed">
+    <origin
+      xyz="0 0.0108 -0.0126999999999999"
+      rpy="0 0 0" />
+    <parent
+      link="right_p1" />
+    <child
+      link="right_p2" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="r_mount">
+    <inertial>
+      <origin
+        xyz="5.5511E-17 -0.002632 1.1102E-16"
+        rpy="0 0 0" />
+      <mass
+        value="3.3553" />
+      <inertia
+        ixx="0.0001"
+        ixy="0.0001"
+        ixz="0.0001"
+        iyy="0.0001"
+        iyz="0.0001"
+        izz="0.0001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assem2/meshes/r_mount.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.52941 0.54902 0.54902 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assem2/meshes/r_mount.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r_mount_j"
+    type="fixed">
+    <origin
+      xyz="0 -0.02 -0.07"
+      rpy="3.1416 0 3.1416" />
+    <parent
+      link="right_p2" />
+    <child
+      link="r_mount" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="r_mounting_body">
+    <inertial>
+      <origin
+        xyz="5.4971E-09 -0.051889 0.045522"
+        rpy="0 0 0" />
+      <mass
+        value="3.4201" />
+      <inertia
+        ixx="0.0001"
+        ixy="0.0001"
+        ixz="0.0001"
+        iyy="0.0001"
+        iyz="0.0001"
+        izz="0.0001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assem2/meshes/r_mounting_body.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.52941 0.54902 0.54902 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assem2/meshes/r_mounting_body.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r_mounting_body_j"
+    type="revolute">
+    <origin
+      xyz="0 -0.03 0"
+      rpy="0 0.0024378 0" />
+    <parent
+      link="r_mount" />
+    <child
+      link="r_mounting_body" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      lower="-1.57"
+      upper="1.57"
+      effort="1"
+      velocity="1" />
+  </joint>
+  <link
+    name="r_screw">
+    <inertial>
+      <origin
+        xyz="2.7756E-17 0.038426 -1.6653E-14"
+        rpy="0 0 0" />
+      <mass
+        value="0.27143" />
+      <inertia
+        ixx="0.0001"
+        ixy="0.0001"
+        ixz="0.0001"
+        iyy="0.0001"
+        iyz="0.0001"
+        izz="0.0001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assem2/meshes/r_screw.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.52941 0.54902 0.54902 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assem2/meshes/r_screw.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r_screw_j"
+    type="fixed">
+    <origin
+      xyz="-0.055 -0.17 0.147"
+      rpy="0 0 -1.5708" />
+    <parent
+      link="r_mounting_body" />
+    <child
+      link="r_screw" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="r_wheel">
+    <inertial>
+      <origin
+        xyz="-0.0099772 -0.00080183 0.055043"
+        rpy="0 0 0" />
+      <mass
+        value="24.277" />
+      <inertia
+        ixx="0.0001"
+        ixy="0.0001"
+        ixz="0.0001"
+        iyy="0.0001"
+        iyz="0.0001"
+        izz="0.0001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assem2/meshes/r_wheel.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.52941 0.54902 0.54902 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assem2/meshes/r_wheel.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r_wheel_j"
+    type="continuous">
+    <origin
+      xyz="0.01 0 0"
+      rpy="-1.5708 -0.067482 0" />
+    <parent
+      link="r_screw" />
+    <child
+      link="r_wheel" />
+    <axis
+      xyz="1 0 0" />
+    <limit
+      effort="5"
+      velocity="1" />
+  </joint>
+  <link
+    name="r_upper_bolt">
+    <inertial>
+      <origin
+        xyz="5.5511E-17 -0.005 2.2204E-16"
+        rpy="0 0 0" />
+      <mass
+        value="0.018361" />
+      <inertia
+        ixx="0.0001"
+        ixy="0.0001"
+        ixz="0.0001"
+        iyy="0.0001"
+        iyz="0.0001"
+        izz="0.0001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assem2/meshes/r_upper_bolt.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.52941 0.54902 0.54902 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assem2/meshes/r_upper_bolt.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r_upper_bolt_j"
+    type="fixed">
+    <origin
+      xyz="0 0 0"
+      rpy="0 -0.32162 0" />
+    <parent
+      link="r_mounting_body" />
+    <child
+      link="r_upper_bolt" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  <link
+    name="r_lower_bolt">
+    <inertial>
+      <origin
+        xyz="8.3267E-17 0.005 2.2204E-16"
+        rpy="0 0 0" />
+      <mass
+        value="0.018361" />
+      <inertia
+        ixx="0.0001"
+        ixy="0.0001"
+        ixz="0.0001"
+        iyy="0.0001"
+        iyz="0.0001"
+        izz="0.0001" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assem2/meshes/r_lower_bolt.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.52941 0.54902 0.54902 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://Assem2/meshes/r_lower_bolt.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="r_lower_bolt_j"
+    type="fixed">
+    <origin
+      xyz="0.065 -0.17 0.147"
+      rpy="0 0 1.5708" />
+    <parent
+      link="r_mounting_body" />
+    <child
+      link="r_lower_bolt" />
+    <axis
+      xyz="0 0 0" />
+  </joint>
+  
+  <plugin name="differential_drive_controller" 	filename="libgazebo_ros_diff_drive.so">
+    <alwaysOn>true</alwaysOn>
+    <updateRate>10</updateRate>
+    <leftJoint>l_rim_j</leftJoint>
+    <!-- matching your left joint name -->
+    <rightJoint>r_rim_j</rightJoint>
+    <!-- matching your right joint name -->
+    <wheelSeparation>0.9181</wheelSeparation>
+    <wheelDiameter>0.68</wheelDiameter>
+    <torque>20</torque>
+    <commandTopic>cmd_vel</commandTopic>
+    <!-- topic name published in the cpp file -->
+    <odometryTopic>odom</odometryTopic>
+    <odometryFrame>odom</odometryFrame>
+    <robotBaseFrame>base_footprint</robotBaseFrame>
+  </plugin> 
+
+</robot>

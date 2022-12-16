@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- This URDF was automatically created by SolidWorks to URDF Exporter! Originally created by Stephen Brawner (brawner@gmail.com) 
+     Commit Version: 1.5.1-0-g916b5db  Build Version: 1.5.7152.31018
+     For more information, please see http://wiki.ros.org/sw_urdf_exporter -->
+<robot
+  name="4wheeledrobo">
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="0.379446627492409 -0.586814520881292 0.433316600137267"
+        rpy="0 0 0" />
+      <mass
+        value="18.6458089186862" />
+      <inertia
+        ixx="0.341339886264213"
+        ixy="-8.9395680407862E-18"
+        ixz="8.7361257498331E-06"
+        iyy="1.0733768203153"
+        iyz="2.06916411894125E-17"
+        izz="1.4066802531373" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://4wheeledrobo/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://4wheeledrobo/meshes/base_link.STL" />
+      </geometry>
+      <surface>
+    <contact>
+      <ode>
+        <max_vel>0</max_vel>
+      </ode>
+    </contact>
+  </surface>
+    </collision>
+  </link>
+  <link
+    name="linkleft1">
+    <inertial>
+      <origin
+        xyz="-2.22044604925031E-16 0 -0.0580446927374302"
+        rpy="0 0 0" />
+      <mass
+        value="1.12469016998515" />
+      <inertia
+        ixx="0.00461378889564732"
+        ixy="0"
+        ixz="3.15169641815633E-20"
+        iyy="0.00461378889564732"
+        iyz="-4.79315007032552E-20"
+        izz="0.00898526914853218" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://4wheeledrobo/meshes/linkleft1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://4wheeledrobo/meshes/linkleft1.STL" />
+      </geometry>
+      <surface>
+    <contact>
+      <ode>
+        <max_vel>0</max_vel>
+      </ode>
+    </contact>
+  </surface>
+    </collision>
+  </link>
+  <joint
+    name="leftpoint"
+    type="continuous">
+    <origin
+      xyz="0.53039 -0.78681 0.43258"
+      rpy="1.5708 0.39309 -3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="linkleft1" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      effort="5"
+      velocity="5" />
+  </joint>
+  <link
+    name="linkright1">
+    <inertial>
+      <origin
+        xyz="0 5.55111512312578E-17 0.0119553072625698"
+        rpy="0 0 0" />
+      <mass
+        value="1.12469016998515" />
+      <inertia
+        ixx="0.00461378889564732"
+        ixy="-4.41631305290208E-35"
+        ixz="1.04486585211827E-19"
+        iyy="0.00461378889564732"
+        iyz="-1.72554969039549E-37"
+        izz="0.00898526914853218" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://4wheeledrobo/meshes/linkright1.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://4wheeledrobo/meshes/linkright1.STL" />
+      </geometry>
+      <surface>
+    <contact>
+      <ode>
+        <max_vel>0</max_vel>
+      </ode>
+    </contact>
+  </surface>
+    </collision>
+  </link>
+  <joint
+    name="rightpoint"
+    type="continuous">
+    <origin
+      xyz="0.53039 -0.31681 0.43258"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="linkright1" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      effort="5"
+      velocity="5" />
+  </joint>
+  <link
+    name="linkleft2">
+    <inertial>
+      <origin
+        xyz="0 5.55111512312578E-17 -0.0580446927374302"
+        rpy="0 0 0" />
+      <mass
+        value="1.12469016998515" />
+      <inertia
+        ixx="0.00461378889564732"
+        ixy="-1.0842021724855E-19"
+        ixz="2.51374988049489E-20"
+        iyy="0.00461378889564732"
+        iyz="-4.85308082546461E-20"
+        izz="0.00898526914853218" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://4wheeledrobo/meshes/linkleft2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://4wheeledrobo/meshes/linkleft2.STL" />
+      </geometry>
+      <surface>
+    <contact>
+      <ode>
+        <max_vel>0</max_vel>
+      </ode>
+    </contact>
+  </surface>
+    </collision>
+  </link>
+  <joint
+    name="leftpoint2"
+    type="continuous">
+    <origin
+      xyz="0.22881 -0.78681 0.43258"
+      rpy="1.5708 0.39309 -3.1416" />
+    <parent
+      link="base_link" />
+    <child
+      link="linkleft2" />
+    <axis
+      xyz="0 0 -1" />
+    <limit
+      effort="5"
+      velocity="5" />
+  </joint>
+  <link
+    name="linkright2">
+    <inertial>
+      <origin
+        xyz="-2.77555756156289E-17 5.55111512312578E-17 0.0119553072625698"
+        rpy="0 0 0" />
+      <mass
+        value="1.12469016998515" />
+      <inertia
+        ixx="0.00461378889564732"
+        ixy="-4.41631305290208E-35"
+        ixz="1.04486585211827E-19"
+        iyy="0.00461378889564732"
+        iyz="-1.72554969039549E-37"
+        izz="0.00898526914853218" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://4wheeledrobo/meshes/linkright2.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.792156862745098 0.819607843137255 0.933333333333333 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://4wheeledrobo/meshes/linkright2.STL" />
+      </geometry>
+      <surface>
+    <contact>
+      <ode>
+        <max_vel>0</max_vel>
+      </ode>
+    </contact>
+  </surface>
+    </collision>
+  </link>
+  <joint
+    name="rightpoint2"
+    type="continuous">
+    <origin
+      xyz="0.22881 -0.31681 0.43258"
+      rpy="1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="linkright2" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      effort="5"
+      velocity="5" />
+  </joint>
+  
+  <plugin name="skid_steer_drive_controller" filename="libgazebo_ros_skid_steer_drive.so">
+    <updateRate>100.0</updateRate>
+    <robotNamespace>4wheeledrobo</robotNamespace>
+    <leftFrontJoint>leftpoint</leftFrontJoint>
+    <rightFrontJoint>rightpoint</rightFrontJoint>
+    <leftRearJoint>leftpoint2</leftRearJoint>
+    <rightRearJoint>rightpoint2</rightRearJoint>
+    <wheelSeparation>0.5</wheelSeparation>
+    <wheelDiameter>0.1219</wheelDiameter>
+    <robotBaseFrame>base_link</robotBaseFrame>
+    <torque>20</torque>
+    <topicName>cmd_vel</topicName>
+    <broadcastTF>false</broadcastTF>
+  </plugin> 
+  
+</robot>
