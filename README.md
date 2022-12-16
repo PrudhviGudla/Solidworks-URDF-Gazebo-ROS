@@ -50,7 +50,7 @@ But the bot is not moving even after adding the differential plugin and publishi
  ![Screenshot (729)](https://user-images.githubusercontent.com/106007058/208169918-94d2e5c6-220d-4ce8-83fd-4a0fd89a51ef.png)
 
 
-## URDF IGVC Car
+## URDF Car
 ``` bash
 roslaunch 4wheeledrobo gazebo.launch
 ```
