@@ -13,6 +13,12 @@ Writing and controlling a SDF car: https://www.theconstructsim.com/how-to-build-
 
 Gazebo plugins: https://classic.gazebosim.org/tutorials?tut=ros_gzplugins#JointPoseTrajectory
 
+to create the links and joints pdf: http://wiki.ros.org/urdf
+
+URDF tutorials: http://wiki.ros.org/urdf/Tutorials
+
+coverting urdf to sdf: https://answers.gazebosim.org//question/2282/convert-urdf-to-sdf-or-load-urdf/
+
 Some stack solutions : https://answers.gazebosim.org//question/6540/my-wheeled-robot-model-sometimes-flies-up-into-the-air-while-driving-why/
 
 ## SDF Car
