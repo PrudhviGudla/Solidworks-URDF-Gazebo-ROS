@@ -7,6 +7,8 @@ URDF from fusion 360: https://www.youtube.com/watch?v=ufYxkNnEFYw
 
 URDF from solidworks: https://www.youtube.com/watch?v=PIxHKowQ-wc
 
+urdf to sdf conversion: https://answers.gazebosim.org//question/2282/convert-urdf-to-sdf-or-load-urdf/
+
 https://www.youtube.com/watch?v=anMymsvJKJI&t
 
 Writing and controlling a SDF car: https://www.theconstructsim.com/how-to-build-a-differential-drive-simulation/
